@@ -1,0 +1,23 @@
+# 作用
+带ui管理多租户能看到租户在线情况的wireguard。
+
+# 部署
+安装centos7.9主机。
+升级到最新内核。
+安装docker & docker-compose
+mkdir -p /opt/service/wireguard && cd /opt/service/wireguard
+vim docker-compose.yml
+将配置文件写入。
+docker-compose up -d
+浏览器访问wireguard web
+然后添加用户即可使用。
+
+# 备注
+mac可是用wireguard app 或者在终端安装wireguarad。
+
+## 安装wireguard
+需要美区apple id 下载wireguard app。
+
+## 终端安装wireguard教程
+https://blog.51cto.com/omaidb/5068345
+
