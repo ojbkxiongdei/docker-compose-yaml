@@ -1,0 +1,19 @@
+version: "3.0"
+services:
+  wg-access-server:
+    image: place1/wg-access-server
+    container_name: wg-access-server
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - "/data/wg-access-server:/data"
+    environment:
+      - "WG_ADMIN_USERNAME=admin"
+      - "WG_ADMIN_PASSWORD="MdHQY7x1RV4WpTmjjCws"
+      # 可以用wireguard客户端生产key
+      - "WG_WIREGUARD_PRIVATE_KEY=UHJd+wA+6wIAWgQTC0/JvvL0d3gpMCKfKVfUT+au/1U=" 
+    ports:
+      - "8000:8000/tcp"
+      - "51820:51820/udp"
+    devices:
+      - "/dev/net/tun:/dev/net/tun"
