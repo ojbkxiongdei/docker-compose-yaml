@@ -1,0 +1,31 @@
+# mongod.conf
+storage:
+  dbPath: /data/db
+  journal:
+    enabled: true
+  engine: wiredTiger
+  wiredTiger:
+    collectionConfig:
+      blockCompressor: snappy
+    engineConfig:
+      cacheSizeGB: 20
+
+systemLog:
+  destination: file
+  logAppend: true
+  path: /data/db/mongod.log
+
+net:
+  port: 27017
+  bindIp: 0.0.0.0
+
+processManagement:
+  timeZoneInfo: /usr/share/zoneinfo
+security:
+  authorization: enabled
+replication:
+  oplogSizeMB: 16000
+  replSetName: m1
+  
+ # 部署
+写入mongod.conf配置文件，然后部署
