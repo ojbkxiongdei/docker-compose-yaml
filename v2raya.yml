@@ -13,4 +13,4 @@ services:
     environment:
       - "V2RAYA_LOG_FILE=/tmp/v2raya.log"
     restart: always
-    network_mode: "host"
+#     network_mode: "host"
