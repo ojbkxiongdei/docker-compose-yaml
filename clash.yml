@@ -1,0 +1,20 @@
+# clash  client for linux 。也可以统一部署到一台机，做局域网旁路由
+version: '3.0'
+services:
+    clash:
+        image: dreamacro/clash-premium:latest
+        restart: always
+        volumes:
+            - /opt/service/clash/config.yaml:/root/.config/clash/config.yaml
+        container_name: clash
+        ports:
+            - 7890:7890
+            - 9090:9090
+    clash_web:
+        image: haishanh/yacd
+        restart: always
+        depends_on:
+            - clash
+        ports:
+            - 58000:80
+        container_name: clash_web
