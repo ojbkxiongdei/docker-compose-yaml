@@ -1,0 +1,11 @@
+version: "3.0"
+services:
+  qinglong:
+    image: whyour/qinglong:latest
+    container_name: qinglong
+    volumes:
+      - "./data:/ql/data"
+    environment:
+      - "QlBaseUrl=/"
+    ports:
+      - "0.0.0.0:5700:5700"
